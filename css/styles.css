@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:400,400i,500')
 
 :root {
   --customize-header-option: #FAFAFA;
@@ -198,6 +198,8 @@ h1#header-date {
 
 #editable-content {
     margin-top: 45px;
+
+    font-family: 'Roboto Mono', monospace !important;
 }
 
 #editable-content div {
