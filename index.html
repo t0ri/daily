@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+
+
+<body>
+    <header>
+        <div id="header-icon">
+            <img id="settings-icon" src="./img/settings.png">
+        </div>
+
+        <h1 id="header-date">October 17</h1>
+        <h1 id="header-settings-text" class="noDOM">Settings</h1>
+    </header>
+
+
+    <div id="editable-content" contenteditable="true"></div>
+
+
+    <!-- BY DEFAULT SETTINGS SET TO INVISIBLE -->
+    <div id="settings">
+        <img class="onboarding-img" src="./img/onboardingimg.png" alt="A legend for the bullet point system.">
+
+        <!-- <p id="customize-heading">customize →</p> -->
+            <div id="customize-options" class="">
+
+                <div class="customize-options">
+                    <p id="customize-options-header-color" class="customize-text">header color: #</p>
+                    <input id="customize-options-header-color-input" class="hex-input" placeholder="FAFAFA" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$"></input>
+                </div>
+
+                <div class="customize-options">
+                    <p id="customize-options-date-color" class="customize-text">date color: #</p>
+                    <input id="customize-options-date-color-input" class="hex-input" placeholder="424242" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$"></input>
+                </div>
+
+            </div>
+        <p id="delete-data">delete my data</p>
+    </div>
+
+    <script src="./js/settings.js"></script>
+    <script src="./js/editor.js"></script>
+</body>
+</html>
