@@ -199,9 +199,10 @@ h1#header-date {
 #editable-content {
     margin-top: 45px;
 
-    font-family: 'Roboto Mono', monospace !important;
 }
 
 #editable-content div {
     padding-top: 5px;
+    font-family: 'Roboto Mono', monospace !important;
+
 }
