@@ -70,28 +70,29 @@ function saveText(line, entryNum) {
 };
 
 function sortIntoStorage(line) {
-    switch (line.charAt(0)) {
-        case "o":
-            return 1;
-            break;
-        case "x":
-            return 2;
-            break;
-        case "&":
-            return 3;
-            break;
-        case "-":
-            return 4;
-            break;
-        case "+":
-            return 5;
-            break;
-        case "!":
-            return 6;
-            break;
-        default:
-            return 0;
-    }
+    return 0;
+    // switch (line.charAt(0)) {
+    //     case "o":
+    //         return 1;
+    //         break;
+    //     case "x":
+    //         return 2;
+    //         break;
+    //     case "&":
+    //         return 3;
+    //         break;
+    //     case "-":
+    //         return 4;
+    //         break;
+    //     case "+":
+    //         return 5;
+    //         break;
+    //     case "!":
+    //         return 6;
+    //         break;
+    //     default:
+    //         return 0;
+    // }
 };
 
 function sortForRender() {
@@ -99,34 +100,36 @@ function sortForRender() {
     data[0]['DATE'][currentDay].forEach(function() {
 
         let next = document.getElementById('');
+        render(data[0]['DATE'][currentDay][noteNum][noteNum]['note'][0], data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]);
 
-        switch (data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]) {
-            case 5:
-                break;
-            case 6:
-                break;
-            default:
-                render(data[0]['DATE'][currentDay][noteNum][noteNum]['note'][0], data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0])
-        };
-
-        switch (data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]) {
-            case 5:
-                render(data[0]['DATE'][currentDay][noteNum][noteNum]['note'][0], data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]);
-                noteNum++;
-                break;
-            case 6:
-                render(data[0]['DATE'][currentDay][noteNum][noteNum]['note'][0], data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]);
-                noteNum++
-                break;
-            default:
-                noteNum++
-                break;
-        };
+        // switch (data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]) {
+        //    case 5:
+        //         break;
+        //     case 6:
+        //         break;
+        //     default:
+        //         render(data[0]['DATE'][currentDay][noteNum][noteNum]['note'][0], data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0])
+        // };
+        //
+        // switch (data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]) {
+        //     case 5:
+        //         render(data[0]['DATE'][currentDay][noteNum][noteNum]['note'][0], data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]);
+        //         noteNum++;
+        //         break;
+        //     case 6:
+        //         render(data[0]['DATE'][currentDay][noteNum][noteNum]['note'][0], data[0]['DATE'][currentDay][noteNum][noteNum]['type'][0]);
+        //         noteNum++;
+        //         break;
+        //     default:
+        //         noteNum++;
+        //         break;
+        // };
     })
 };
 
 function render(line, type) {
-    let str = "<div class=\"rendered\">" + line.charAt(0) + "&emsp;" + line.substring(1) + "</div>";
+    // let str = "<div class=\"rendered\">" + line.charAt(0) + "&emsp;" + line.substring(1) + "</div>";
+    let str = "<div class=\"rendered\">" + line + "</div>";
 
     let start = document.getElementById('editable-content');
     // let start = function() {
@@ -139,16 +142,18 @@ function render(line, type) {
     //     }
     // };
 
+    start.insertAdjacentHTML('beforeend', str);
 
-    if (type == 5 || type == 6) {
-        start.insertAdjacentHTML('beforeend', str);
-    } else if (type == 3) {
-        str = "<div class=\"rendered\">" + "&gt; &emsp; &emsp;" + line.substring(7) + "</div>";
-        start.insertAdjacentHTML('beforeend', str);
-    } else if (type == 0) {
-        str = "<div class=\"rendered\">" + line + "</div>";
-        start.insertAdjacentHTML('beforeend', str);
-    } else {
-        start.insertAdjacentHTML('beforeend', str);
-    };
+    //
+    // if (type == 5 || type == 6) {
+    //     start.insertAdjacentHTML('beforeend', str);
+    // } else if (type == 3) {
+    //     str = "<div class=\"rendered\">" + "&gt; &emsp; &emsp;" + line.substring(7) + "</div>";
+    //     start.insertAdjacentHTML('beforeend', str);
+    // } else if (type == 0) {
+    //     str = "<div class=\"rendered\">" + line + "</div>";
+    //     start.insertAdjacentHTML('beforeend', str);
+    // } else {
+    //     start.insertAdjacentHTML('beforeend', str);
+    // };
 };
